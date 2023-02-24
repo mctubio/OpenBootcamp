@@ -2,12 +2,14 @@ import sqlite3
 import getpass
 
 def main():
-    nombre = input('Ingrese el nombre del estudiante: ')
-    apellido = input('Ingrese el apellido del estudiante: ')
-    if buscar_estudiante(nombre, apellido):
-        print('Es un/a estudiante')
-    else:
-        print('No es un/a estudiante')
+    #nombre = input('Ingrese el nombre del estudiante: ')
+    # apellido = input('Ingrese el apellido del estudiante: ')
+    # if buscar_estudiante(nombre, apellido):
+    #     print('Es un/a estudiante')
+    #else:
+    #   print('No es un/a estudiante')
+
+    nuevo_estudiante()
 
 
 def nuevo_estudiante():

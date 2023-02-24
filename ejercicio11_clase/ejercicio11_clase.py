@@ -17,8 +17,7 @@ def main_():
 
 
 def verifica_credenciales(username, password):
-    conn = sqlite3.connect(
-        'B:\OpenBootCamp\Python\python_basico\ejercicio11\micarpeta.db')
+    conn = sqlite3.connect('B:\OpenBootCamp\Python\python_basico\ejercicio11_clase\micarpeta.db')
     cursor = conn.cursor()
 
     query = f'SELECT id FROM users WHERE username = "{username}" AND password = "{password}"'
