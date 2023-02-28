@@ -1,0 +1,26 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+
+    <h3 style="font-weight: bold;">{{ film.title }}</h3>
+
+    <hr>
+
+    <p><strong>Director:</strong> <a href="{% url 'director-detail' film.director.pk %}"">{{ film.director }}</a></p>
+    <p><strong>Sinopsis:</strong> {{ film.sinopsis }}</p>
+    <p><strong>Reparto:</strong> {% for cast in film.cast.all %} {{cast}} {% if not forloop.last %}, {% endif %} {% endfor %}</p>
+    <p><strong>Genero:</strong> {% for genre in film.genre.all %} {{genre}} {% if not forloop.last %}, {% endif %} {% endfor %} </p>
+    <p><strong>Idioma:</strong> {% for language in film.language.all %} {{language}} {% if not forloop.last %}, {% endif %} {% endfor %}</p>
+    
+    <div style= 'margin-top: 20px; margin-bottom: 10px;'>
+    
+        <h4><strong>Donde ver</strong></h4>
+
+        {% for copy in film.filminstance_set.all %}
+
+        <p class="{% if copy.status == 'c' %}text-success{% elif copy.status == 's' %}text-danger{% else %}text-warning{% endif %}" style="font-size: larger; font-weight: bold; margin-left: 100px;">{{ copy.get_status_display }}</p>
+        {% endfor %}
+    
+    </div>
+
+{% endblock %}

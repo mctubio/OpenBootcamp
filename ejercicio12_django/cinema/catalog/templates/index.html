@@ -1,0 +1,20 @@
+{% extends 'base_generic.html' %}
+
+{% block content %}
+
+<h1>Cinema</h1>
+
+<p>Bienvenidos al cinema local</p>
+
+<h3>Contenido</h3>
+
+<p>El cinema tiene</p>
+
+<ul>
+    <li>Films {{ num_films }}</li>
+    <li>Copias {{ num_instances }}</li>
+    <li>Peliculas en cartelera {{ num_instances_available }}</li>
+    <li>Directores {{ num_director }}</li>
+</ul>
+
+{% endblock %}
